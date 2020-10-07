@@ -16,6 +16,9 @@ p{
     padding-left: 30px;
 }
 
+h2{
+
+}
 h3{
   
   font-size: 22px;
@@ -23,15 +26,11 @@ h3{
   color: #fff;
   
   position: relative;
-  text-align: center
+  text-align: center;
+  text-decoration: underline;
 }
 
 
-
-div,label{
-    padding-left: 30px;
-
-}
 
 
 
@@ -76,8 +75,15 @@ div,label{
 
 
 
-
-
-
-
+.border-button {
+  padding: 1em 1.75em;
+  margin: 0.25em;
+  background: none;
+  display: inline-block;
+  color: @text;
+  cursor: pointer;
+  font-size: 21px;
+  line-height: 1.6;
+  text-decoration: none;
+}
 
