@@ -16,7 +16,7 @@ header {
 }
 
 footer {
-    position: absolute;
+    position: fixed;
     width: 100%;
     background: #434448;
     color: cornsilk;
@@ -49,7 +49,7 @@ footer {
     }
 
 .navigation {
-    margin:0;
+    margin:20px;
     width: 200px;
     height: 100px;
     float: left;

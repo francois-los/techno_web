@@ -53,7 +53,7 @@
 
   <h3  ><br><br> Question Numéro 4 !<br><br>  </h3>
   <p> Combien y-a-t'il de pays en Afrique ? </p>
-  <p> 54  </p>
+  <p><span class="lastQuestion"> 54  </span></p>
 
 
 

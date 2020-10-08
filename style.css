@@ -15,18 +15,13 @@ h2{
 
 }
 h3{
-  
+  margin-top: 0px;
   font-size: 22px;
   letter-spacing: 8px;
   color: #fff;
-  
-  position: relative;
   text-align: center;
   text-decoration: underline;
 }
-
-
-
 
 
 
@@ -71,7 +66,7 @@ h3{
 
 
 .border-button {
-  padding: 1em 1.75em;
+  padding: 1em 1.75em 2em 1.75em;
   margin: 0.25em;
   background: none;
   display: inline-block;
@@ -82,3 +77,6 @@ h3{
   text-decoration: none;
 }
 
+.lastQuestion {
+  padding-bottom: 90px;
+}

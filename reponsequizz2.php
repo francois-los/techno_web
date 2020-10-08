@@ -53,7 +53,7 @@
 
   <h3  ><br><br> Question Numéro 4 !<br><br>  </h3>
   <p> Quelle est la réponse ? (entre 20 et 70) </p>
-  <p> 42  </p>
+  <p><span class="lastQuestion"> 42 </span></p>
 
 
 

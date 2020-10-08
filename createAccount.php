@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="FR">
 <?php include('headerr.html')?>
 <head>
