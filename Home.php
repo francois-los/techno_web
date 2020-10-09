@@ -14,7 +14,7 @@
 
 <section>
   <div class="container">
-    <div class="background-img2">
+    <div class="background-img">
         <div class="box">
         <div class="content">
           <h1> Bienvenue </h1>
