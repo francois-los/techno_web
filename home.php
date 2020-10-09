@@ -22,23 +22,6 @@
   </div>
 </section>
 
-<section>
-  <div class="container">
-         <a href="quiz1.php">
-         <img  alt="quiz1" src="bannierequiz1.jpg"
-         width="800" height="175"></a>
-  </div>
-</section>
-
-<section>
-  <div class="container"> 
-    <a href="quiz2.php">
-      <img alt="quiz2" src="bannierequiz2.jpg"
-      width="800" height="175">
-    </a>
-  </div>
-</section>
-
 </body>
 
 </html>
