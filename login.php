@@ -18,7 +18,7 @@
 		<br />
 		<div>
 			<button type="submit">Se connecter</button>
-			<button type="submit">S'incrire</button>
+			<button type="submit"><a href="createAccount.php">S'incrire</a></button>
 		<div/>
 	</form>     
 </body>
