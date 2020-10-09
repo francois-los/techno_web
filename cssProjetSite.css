@@ -12,7 +12,7 @@ header {
     background: #0b0f4c;
     color: cornsilk;
     font-size: 20px;
-    height: 85px;
+    height: 90px;
 }
 
 footer {
@@ -32,6 +32,8 @@ footer {
     text-align: right;
     width: 300px;
     float: right;
+    position: relative;
+    bottom: 58px;
 }
 
     .loginForm input {
@@ -41,14 +43,21 @@ footer {
         width: 50%;
     }
 
-    .loginForm button[type = "submit"] {
+    .loginForm button {
         color: black;
         border: solid 1px white;
         cursor: pointer;
         width: 52%;
     }
 
-.navigation {
+        .loginForm input[type="button"] {
+            color: black;
+            border: solid 1px white;
+            cursor: pointer;
+            width: 52%;
+        }
+
+.navigation1 {
     margin:20px;
     width: 200px;
     height: 100px;
@@ -77,6 +86,24 @@ footer {
             background: #2e0ed5;
             text-decoration: underline;
         }
+
+.navigation2 {
+    display:flex;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 310px;
+}
+
+    .navigation2 li a{
+        display: block;
+        background: white;
+        color: #0c0038;
+        line-height: 2em;
+        width: 150px;
+        text-decoration: none;
+    }
+
 
 h1 {
     margin: 10px 0px 0px 10px;
