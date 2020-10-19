@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="FR">
 <?php include('headerr.html')?>
+<?php include('footer.html')?>
 <head>
     <title>Create your account</title>
-    <link href="cssProjetSite.css" rel="stylesheet" />
-    <meta charset="utf-8">
 </head>
 <body>
 
@@ -48,7 +47,6 @@
             </div>
         </div>
     </form>
-    <?php include('footer.html')?>
 </body>
 </html>
            

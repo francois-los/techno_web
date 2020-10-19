@@ -3,9 +3,7 @@
 <?php include('headerr.html')?>
 <?php include('footer.html')?>
 <head>
-  <meta charset="utf-8">
   <title>Quiz2</title>
-  <link rel="stylesheet" href="style.css"/>
 </head>
 
 

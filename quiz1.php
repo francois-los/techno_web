@@ -3,9 +3,7 @@
 <?php include('headerr.html')?>
 <?php include('footer.html')?>
 <head>
-  <meta charset="utf-8">
   <title>Quiz1</title>
-  <link rel="stylesheet" href="style.css"/>
 </head>
 
 
@@ -50,7 +48,7 @@
   </div>
   <div>
   	<h2>  </h2>
-    <button type="submit">  </br>   Valider !</button>
+    <button type="submit">     Valider !</button>
   </div>
 </form>
 
@@ -113,7 +111,7 @@
   </div>
   <div>
     <h2>  </h2>
-    <button type="submit"> </br> Valider !</button>
+    <button type="submit"> Valider !</button>
   </div>
 </form>
 

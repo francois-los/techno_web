@@ -1,11 +1,9 @@
 <!doctype html>
 <html lang="fr">
+<?php include('headerr.html')?>
+<?php include('footer.html')?>
 <head>
-  <meta charset="utf-8">
   <title>Reponse Quizz</title>
-  <link rel="stylesheet" href="style.css">
-  <?php include('headerr.html')?>
-  <?php include('footer.html')?>
 </head>
 
 
