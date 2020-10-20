@@ -130,7 +130,7 @@
 
 
 <h3> <br><br>Question Numéro 7 !<br><br>  </h3>
-<label for="Question-select">  Quam multa enim I + II </label>
+<label for="Question-select">  Quam multa enim I + II ? </label>
 <select name="Question" id="Question-select">
     <option value="">--choissiez...-</option>
     <option value="1">I</option>
@@ -146,7 +146,7 @@
 
 <h3> <br><br>Question Numéro 8 !<br><br>  </h3>
 <form >
-  <label for="quantity"> Combien y-a-t'il de "u" dans Jacque Chirac</label>
+  <label for="quantity"> Combien y-a-t'il de "u" dans Jacque Chirac ?</label>
   <input type="number" id="quantity" name="quantity" min="0" max="20">
   <input type="submit">
 </form>

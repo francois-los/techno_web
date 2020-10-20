@@ -61,7 +61,7 @@
 
   <h3  ><br><br> Question Numéro 6 !<br><br>  </h3>
   <p> De quelle forme est la terre ? </p>
-  <p> ronde </p>
+  <p> Ronde </p>
 
   <!-- Question 7 -->
 
