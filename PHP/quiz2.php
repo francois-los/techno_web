@@ -25,14 +25,19 @@
   </div>
 </section>
 
-
+<?php $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root',''); ?>
 
  <!-- Question 1 -->
 
 
-<form>
-  <h3  ><br><br> Question Numéro 1 !<br><br>  </h3>
-  <p> Quelle est la couleur du cheval blanc d'Henri 4 ? <br><br></p>
+
+<?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=9 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <form>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
+  <p> <?php echo $results['question_title']; ?> </p>
   <div>
     <input type="radio" id="Choice1"
      name="contact" value="1">
@@ -52,22 +57,43 @@
   </div>
 </form>
 
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
+
 
  <!-- Question 2 -->
 
 
-<h3> <br><br>Question Numéro 2 !<br><br>  </h3>
-<label >Que fait une tortue le matin ? <br><br>
+<?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=10 " );
+
+while ($results = $response->fetch() ){
+ ?>
+<h3> <br><br>Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
+<label ><?php echo $results['question_title']; ?><br><br>
 <input type="checkbox" name="question3" id="q3answer1" value ="answer1" checked="checked" />Elle range sa chambre
 <input type="checkbox" name="question3" id="q3answer2" value ="answer2" />Elle se lave 
 <input type="checkbox" name="question3" id="q3answer3" value ="answer3" />Elle continue de dormir</label>
 
 
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
  <!-- Question 3 -->
 
 
-<h3> <br><br>Question Numéro 3 !<br><br>  </h3>
-<label for="Question-select"> Quand est-ce que les poules auront des dents ?</label>
+<?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=11 " );
+
+while ($results = $response->fetch() ){
+ ?>
+<h3> <br><br>Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
+<label for="Question-select"> <?php echo $results['question_title']; ?></label>
 <select name="Question" id="Question-select">
     <option value="">--choissiez...-</option>
     <option value="1">2020</option>
@@ -78,12 +104,40 @@
 
 </select>
 
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
 
  <!-- Question 4 -->
 
-<h3> <br><br>Question Numéro 4 !<br><br>  </h3>
+ <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=12 " );
+
+while ($results = $response->fetch() ){
+ ?>
+<h3> <br><br>Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
+<label for="Question-select"> <?php echo $results['question_title']; ?></label>
+<select name="Question" id="Question-select">
+    <option value="">--choissiez...-</option>
+    <option value="1">2020</option>
+    <option value="2">2026</option>
+    <option value="1">2027</option>
+    <option value="1">2031</option>
+    <option value="1">42</option>
+
+</select>
+
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
+<h3> <br><br>Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
 <form >
-  <label for="quantity">Quelle est la réponse ? (entre 20 et 70)</label>
+  <label for="quantity"><?php echo $results['question_title']; ?></label>
   <input type="number" id="quantity" name="quantity" min="20" max="70">
   <input type="submit">
 </form>
@@ -91,10 +145,13 @@
 
  <!-- Question 5 -->
 
+<?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=13 " );
 
+while ($results = $response->fetch() ){
+ ?>
 <form>
-  <h3  ><br><br> Question Numéro 5 !<br><br>  </h3>
-  <p> De quel couleur est le soleil la nuit  ? </p>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
+  <p> <?php echo $results['question_title']; ?> </p>
   <div>
     <input type="radio" id="Choice1"
      name="contact" value="1">
@@ -115,21 +172,45 @@
 </form>
 
 
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
+
  <!-- Question 6 -->
 
+<?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=14 " );
 
-<h3> <br><br>Question Numéro 6 !<br><br>  </h3>
-<label > De quelle forme est la terre ? <br><br>
-<input type="checkbox" name="question3" id="q3answer1" value ="answer1" checked="checked" /> Ronde
-<input type="checkbox" name="question3" id="q3answer2" value ="answer2" /> Plate
-<input type="checkbox" name="question3" id="q3answer3" value ="answer3" /> Cubique </label>
+while ($results = $response->fetch() ){
+ ?>
+<h3> <br><br>Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
+<label for="Question-select"> <?php echo $results['question_title']; ?></label>
+<select name="Question" id="Question-select">
+    <option value="">--choissiez...-</option>
+    <option value="1">2020</option>
+    <option value="2">2026</option>
+    <option value="1">2027</option>
+    <option value="1">2031</option>
+    <option value="1">42</option>
+
+</select>
+
+<?php
+}
+$response->closeCursor() ;
+?>
 
 
  <!-- Question 7 -->
 
+<?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=15 " );
 
-<h3> <br><br>Question Numéro 7 !<br><br>  </h3>
-<label for="Question-select">  Quam multa enim I + II ? </label>
+while ($results = $response->fetch() ){
+ ?>
+<h3> <br><br>Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
+<label for="Question-select"> <?php echo $results['question_title']; ?> </label>
 <select name="Question" id="Question-select">
     <option value="">--choissiez...-</option>
     <option value="1">I</option>
@@ -140,15 +221,34 @@
 
 </select>
 
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
+
 
  <!-- Question 8 -->
 
-<h3> <br><br>Question Numéro 8 !<br><br>  </h3>
+
+<?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=16 " );
+
+while ($results = $response->fetch() ){
+ ?>
+<h3> <br><br>Question Numéro <?php echo $results['question_id']; ?> !<br><br>  </h3>
 <form >
-  <label for="quantity"> Combien y-a-t'il de "u" dans Jacque Chirac ?</label>
+  <label for="quantity"><?php echo $results['question_title']; ?></label>
   <input type="number" id="quantity" name="quantity" min="0" max="20">
   <input type="submit">
 </form>
+
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
 
 
 
