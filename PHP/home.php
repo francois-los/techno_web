@@ -1,7 +1,7 @@
-<!doctype html>
+<?php include ('data.php')?>
 <html lang="fr">
-<?php include('headerr.html')?>
-<?php include('footer.html')?>
+<?php include('../HTML/headerr.html')?>
+<?php include('../HTML/footer.html')?>
 <head>
   <title>Home</title>
 </head>

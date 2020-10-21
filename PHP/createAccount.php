@@ -1,7 +1,6 @@
-<!DOCTYPE html>
 <html lang="FR">
-<?php include('headerr.html')?>
-<?php include('footer.html')?>
+<?php include('../HTML/headerr.html')?>
+<?php include('../HTML/footer.html')?>
 <head>
     <title>Create your account</title>
 </head>

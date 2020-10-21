@@ -1,8 +1,6 @@
-
-<!doctype html>
 <html lang="fr">
-<?php include('headerr.html')?>
-<?php include('footer.html')?>
+<?php include('../HTML/headerr.html')?>
+<?php include('../HTML/footer.html')?>
 <head>
   <title>Reponse Quizz</title>
 </head>
