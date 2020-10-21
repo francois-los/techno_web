@@ -25,55 +25,139 @@
 </section>
 
 
+
+<?php $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root',''); ?>
+
   <!-- Question 1 -->
 
-  <h3  ><br><br> Question Numéro 1 !<br><br>  </h3>
-  <p> Quelle est la date de la bataille de Waterloo ? </p>
-  <p> 18 juin 1815  </p>
+<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=1 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
+  <p> Quelle est la date de la Révolution française ? </p>
+  <p> <?php echo $results['answer_text']; ?> </p>
+
+<?php
+}
+$response->closeCursor() ;
+?>
+
 
   <!-- Question 2 -->
 
-  <h3  ><br><br> Question Numéro 2 !<br><br>  </h3>
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=2 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
   <p> Quand s'est fait le couronnement de Charlemagne ? </p>
-  <p> 25 décembre 800 </p>
+  <p> <?php echo $results['answer_text']; ?> </p>
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
+
 
   <!-- Question 3 -->
 
-  <h3  ><br><br> Question Numéro 3 !<br><br>  </h3>
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=3 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
   <p>  Quelle est la date de naissance de la reine d'Angleterre ? </p>
-  <p> 1926 </p>
+  <p> <?php echo $results['answer_text']; ?> </p>
+<?php
+}
+$response->closeCursor() ;
+?>
+
+
+
 
   <!-- Question 4 -->
 
-  <h3  ><br><br> Question Numéro 4 !<br><br>  </h3>
+<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=4 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
   <p> Combien y-a-t'il de pays en Afrique ? </p>
-  <p> 54  </span></p>
+  <p><span class="lastQuestion"> <?php echo $results['answer_text']; ?>  </span></p>
+
+<?php
+}
+$response->closeCursor() ;
+?>
+
 
   <!-- Question 5 -->
 
-  <h3  ><br><br> Question Numéro 5 !<br><br>  </h3>
+<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=5 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
   <p> Quelle est la date de la bataille de Bouvines ? </p>
-  <p> 1214  </p>
+  <p> <?php echo $results['answer_text']; ?>  </p>
+
+<?php
+}
+$response->closeCursor() ;
+?>
+
 
   <!-- Question 6 -->
 
-  <h3  ><br><br> Question Numéro 6 !<br><br>  </h3>
+<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=6 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
   <p>  Qui est le pharaon de Moïse ?  </p>
-  <p> Ramsès II </p>
+  <p> <?php echo $results['answer_text']; ?></p>
+
+
+<?php
+}
+$response->closeCursor() ;
+?>
 
   <!-- Question 7 -->
 
-  <h3  ><br><br> Question Numéro 7 !<br><br>  </h3>
+
+<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=7 " );
+
+while ($results = $response->fetch() ){
+ ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
   <p>  Combien d'années ont duré les croisades ? </p>
-  <p> 400 ans </p>
+  <p> <?php echo $results['answer_text']; ?> </p>
+
+<?php
+}
+$response->closeCursor() ;
+?>
 
   <!-- Question 8 -->
 
-  <h3  ><br><br> Question Numéro 8 !<br><br>  </h3>
+
+<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=8 " );
+
+while ($results = $response->fetch() ){
+ ?>
+
+  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
   <p> Combien y-a-t'il eu de roi en France ? </p>
-  <p><span class="lastQuestion"> 64  </span></p>
+  <p><span class="lastQuestion"> <?php echo $results['answer_text']; ?>  </span></p>
 
-
+<?php
+}
+$response->closeCursor() ;
+?>
 
 
 </body>
