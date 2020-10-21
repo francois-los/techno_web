@@ -32,7 +32,7 @@
 
 <form>
   <h3  ><br><br> Question Numéro 1 !<br><br>  </h3>
-  <p> Quelle est la date de la bataille de waterloo ?<br><br>  </p>
+  <p> Quelle est la date de la bataille de Waterloo ?<br><br>  </p>
   <div>
     <input type="radio" id="Choice1"
      name="contact" value="1">

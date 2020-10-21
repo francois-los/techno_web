@@ -30,7 +30,7 @@
   <!-- Question 1 -->
 
   <h3  ><br><br> Question Numéro 1 !<br><br>  </h3>
-  <p> Quelle est la date de la Révolution française ? </p>
+  <p> Quelle est la date de la bataille de Waterloo ? </p>
   <p> 18 juin 1815  </p>
 
   <!-- Question 2 -->
@@ -49,7 +49,7 @@
 
   <h3  ><br><br> Question Numéro 4 !<br><br>  </h3>
   <p> Combien y-a-t'il de pays en Afrique ? </p>
-  <p><span class="lastQuestion"> 54  </span></p>
+  <p> 54  </span></p>
 
   <!-- Question 5 -->
 
