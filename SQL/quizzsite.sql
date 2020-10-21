@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mar. 20 oct. 2020 à 20:39
+-- Généré le :  mer. 21 oct. 2020 à 17:32
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -81,22 +81,22 @@ CREATE TABLE IF NOT EXISTS `question` (
 --
 
 INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `question_input_type`) VALUES
-(1, 'Quelle est la date de la bataille de Waterloo ?', 1, ''),
-(2, 'Quand s\'est fait le couronnement de Charlemagne ?', 1, ''),
-(3, 'Quelle est la date de naissance de la reine d\'Angleterre ?', 1, ''),
-(4, 'Combien y-a-t\'il de pays en Afrique ?', 1, ''),
-(5, 'Quelle est la date de la bataille de Bouvines ?', 1, ''),
-(6, 'Qui est le pharaon de Moïse ?', 1, ''),
-(7, 'Combien d\'années ont duré les croisades ?', 1, ''),
-(8, 'Combien y-a-t\'il eu de roi en France ?', 1, ''),
-(9, 'Quelle est la couleur du cheval blanc d\'Henri 4 ?', 2, ''),
-(10, 'Que fait une tortue le matin ?', 2, ''),
-(11, 'Quand est-ce que les poules auront des dents ?', 2, ''),
-(12, 'Quelle est la réponse ? (entre 20 et 70)', 2, ''),
-(13, 'De quel couleur est le soleil la nuit  ?', 2, ''),
-(14, 'De quelle forme est la terre ?', 2, ''),
-(15, 'Quam multa enim I + II ?', 2, ''),
-(16, 'Combien y-a-t\'il de \"u\" dans Jacque Chirac ?', 2, '');
+(1, 'Quelle est la date de la bataille de Waterloo ?', 1, 'radio'),
+(2, 'Quand s\'est fait le couronnement de Charlemagne ?', 1, 'checkbox'),
+(3, 'Quelle est la date de naissance de la reine d\'Angleterre ?', 1, 'select'),
+(4, 'Combien y-a-t\'il de pays en Afrique ?', 1, 'number'),
+(5, 'Quelle est la date de la bataille de Bouvines ?', 1, 'radio'),
+(6, 'Qui est le pharaon de Moïse ?', 1, 'checkbox'),
+(7, 'Combien d\'années ont duré les croisades ?', 1, 'select'),
+(8, 'Combien y-a-t\'il eu de roi en France ?', 1, 'number'),
+(9, 'Quelle est la couleur du cheval blanc d\'Henri 4 ?', 2, 'radio'),
+(10, 'Que fait une tortue le matin ?', 2, 'checkbox'),
+(11, 'Quand est-ce que les poules auront des dents ?', 2, 'select'),
+(12, 'Quelle est la réponse ? (entre 20 et 70)', 2, 'number'),
+(13, 'De quel couleur est le soleil la nuit  ?', 2, 'radio'),
+(14, 'De quelle forme est la terre ?', 2, 'checkbox'),
+(15, 'Quam multa enim I + II ?', 2, 'select'),
+(16, 'Combien y-a-t\'il de \"u\" dans Jacque Chirac ?', 2, 'number');
 
 -- --------------------------------------------------------
 
@@ -128,13 +128,15 @@ INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE IF NOT EXISTS `user` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'user identifiant',
+  `username` varchar(255) NOT NULL COMMENT 'username to connect',
   `user_last_name` varchar(255) NOT NULL COMMENT 'user last name',
   `user_first_name` varchar(255) NOT NULL COMMENT 'user first name',
   `user_adress` longtext DEFAULT NULL COMMENT 'user physical adress',
   `user_phone` varchar(255) DEFAULT NULL COMMENT 'user phone',
   `user_birthdate` datetime DEFAULT NULL,
   `user_password` varchar(255) NOT NULL COMMENT 'User Password',
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------

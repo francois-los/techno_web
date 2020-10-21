@@ -119,14 +119,12 @@ h1 {
     top: 55%;
     left: 50%;
     width: 800px;
-    height: 68%;
+    height: 75%;
     padding: 10px 0;
 }
 
-    
-
     #signup-form h2 {
-        margin: 0 0 40px;
+        margin: 0;
         padding: 0;
         text-align: center;
         font-size: 3em;
@@ -180,11 +178,6 @@ h3 {
     color: #fff;
     text-align: center;
     text-decoration: underline;
-}
-
-.container {
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
 
 .background-img2 {
