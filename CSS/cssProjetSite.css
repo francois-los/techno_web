@@ -133,12 +133,13 @@ h1 {
     color: white;
     position: absolute;
     transform: translate(-50%, -50%);
-    margin-top: 35%;
+    margin-top: 37%;
     left: 50%;
     width: auto;
     height: auto;
     padding-left: 3%;
     padding-right: 3%;
+    padding-bottom: 5%;
 }
 
     #signup-form h2 {
