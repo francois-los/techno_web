@@ -154,7 +154,7 @@ CREATE TABLE IF NOT EXISTS `user_answer` (
   `user_answer_text` varchar(255) NOT NULL COMMENT 'text of the answer',
   PRIMARY KEY (`user_answer_id`),
   KEY `user_id_fk` (`user_id`),
-  KEY `answer_id_fk` (`answer_id`)
+  KEY `answer_id_fk` (`answer_id`),
   KEY `user_answer_text_fk` (`user_answer_text`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
