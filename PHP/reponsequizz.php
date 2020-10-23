@@ -1,5 +1,5 @@
 <html lang="fr">
-<?php include('../HTML/headerr.html')?>
+<?php include('headerr.php')?>
 <?php include('../HTML/footer.html')?>
 <head>
   <title>Reponse Quizz</title>
@@ -19,7 +19,7 @@
         <div class="content">
           <h2> Réponses Quizz numéro 1 </h2>
         </div>    
-      </div>
+      </div>  
     </div>
   </div>
 </section>
@@ -27,52 +27,85 @@
 
   <!-- Question 1 -->
 
-  <h3  ><br><br> Question Numéro 1 !<br><br>  </h3>
-  <p> Quelle est la date de la bataille de Waterloo ? </p>
-  <p> 18 juin 1815  </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=1 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
+
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=1 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q1bool)) && ($q1bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q1answer; ?> </p> <?php } ?>
+
 
   <!-- Question 2 -->
 
-  <h3  ><br><br> Question Numéro 2 !<br><br>  </h3>
-  <p> Quand s'est fait le couronnement de Charlemagne ? </p>
-  <p> 25 décembre 800 </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=2 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
+
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=2 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q2bool)) && ($q2bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q2answer; ?> </p> <?php } ?>
 
   <!-- Question 3 -->
 
-  <h3  ><br><br> Question Numéro 3 !<br><br>  </h3>
-  <p>  Quelle est la date de naissance de la reine d'Angleterre ? </p>
-  <p> 1926 </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=3 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
+
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=3 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q3bool)) && ($q3bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q3answer; ?> </p> <?php } ?>
 
   <!-- Question 4 -->
 
-  <h3  ><br><br> Question Numéro 4 !<br><br>  </h3>
-  <p> Combien y-a-t'il de pays en Afrique ? </p>
-  <p> 54  </span></p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=4 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p> <?php echo $results['question_title']; ?></p>
+
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=4 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q4bool)) && ($q4bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q4answer; ?> </p> <?php } ?>
 
   <!-- Question 5 -->
 
-  <h3  ><br><br> Question Numéro 5 !<br><br>  </h3>
-  <p> Quelle est la date de la bataille de Bouvines ? </p>
-  <p> 1214  </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=5 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p> <?php echo $results['question_title']; ?> </p>
+
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=5 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q5bool)) && ($q5bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q5answer; ?> </p> <?php } ?>
 
   <!-- Question 6 -->
 
-  <h3  ><br><br> Question Numéro 6 !<br><br>  </h3>
-  <p>  Qui est le pharaon de Moïse ?  </p>
-  <p> Ramsès II </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=6 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
+
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=6 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q6bool)) && ($q6bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q6answer; ?> </p> <?php } ?>
 
   <!-- Question 7 -->
 
-  <h3  ><br><br> Question Numéro 7 !<br><br>  </h3>
-  <p>  Combien d'années ont duré les croisades ? </p>
-  <p> 400 ans </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=7 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p>   <?php echo $results['question_title']; ?> </p>
+
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=7 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q7bool)) && ($q7bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q7answer; ?> </p> <?php } ?>
 
   <!-- Question 8 -->
 
-  <h3  ><br><br> Question Numéro 8 !<br><br>  </h3>
-  <p> Combien y-a-t'il eu de roi en France ? </p>
-  <p><span class="lastQuestion"> 64  </span></p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=8 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo $results['question_id']; ?>  !<br><br>  </h3>
+  <p> <?php echo $results['question_title']; ?> </p>
 
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=8 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q8bool)) && ($q8bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q8answer; ?><br> </p> <?php } ?>
+<br /><br /><br /><br />
 
 
 
