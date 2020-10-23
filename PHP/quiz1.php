@@ -27,7 +27,7 @@
 
 
 <?php $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root',''); ?>
-
+<?php $bdd->exec("INSERT INTO user (user_id, username, user_last_name, user_first_name, user_password) VALUES (1,'defaultuser','default','default','password')"); ?>
 
 
 <!-- Question 1 -->
