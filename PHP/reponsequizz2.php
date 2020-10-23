@@ -1,5 +1,5 @@
 <html lang="fr">
-<?php include('../HTML/headerr.html')?>
+<?php include('headerr.php')?>
 <?php include('../HTML/footer.html')?>
 <head>
   <title>Reponse Quizz</title>
@@ -26,170 +26,88 @@
 </section>
 
 
-<?php $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root',''); ?>
-
   <!-- Question 1 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=9 " );
-      $test = $bdd->query("SELECT * FROM `user_answer` WHERE answer_id=9 " );
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=9 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-($results = $response->fetch());
-($ans = $test->fetch() );
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p> Quelle est la couleur du cheval blanc d'Henri 4 ? </p>
-  <p> <?php if($ans['user_answer_text']==$results['answer_text']){
-  echo"Bonne réponse";}
-  else {
-  echo $results['answer_text'];}  ?>  </p>
-
-<?php
-
-$response->closeCursor() ;
-?>
-
-
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=9 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q9bool)) && ($q9bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q9answer; ?> </p> <?php } ?>
 
   <!-- Question 2 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=10 " );
-      $test = $bdd->query("SELECT * FROM `user_answer` WHERE answer_id=10 " );
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=10 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-($results = $response->fetch() );
-($ans = $test->fetch() );
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p> Que fait une tortue le matin ? </p>
-  <p> <?php if($ans['user_answer_text']==$results['answer_text']){
-  echo"Bonne réponse";}
-  else {
-  echo $results['answer_text'];}  ?>  </p>
-<?php
-
-$response->closeCursor() ;
-?>
-
-
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=10 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q10bool)) && ($q10bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q10answer; ?> </p> <?php } ?>
 
   <!-- Question 3 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=11 " );
-      $test = $bdd->query("SELECT * FROM `user_answer` WHERE answer_id=11 " );
-($results = $response->fetch() );
-($ans = $test->fetch() );
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p>  Quand est-ce que les poules auront des dents ?</p>
-  <p> <?php if($ans['user_answer_text']==$results['answer_text']){
-  echo"Bonne réponse";}
-  else {
-  echo $results['answer_text'];}  ?>  </p>
-<?php
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=11 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-$response->closeCursor() ;
-?>
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=11 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q11bool)) && ($q11bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q11answer; ?> </p> <?php } ?>
 
   <!-- Question 4 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=12 " );
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=12 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-($results = $response->fetch() )
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p> Quelle est la réponse ? (entre 20 et 70) </p>
-  <p><span class="lastQuestion"> <?php echo $results['answer_text']; ?>  </span></p>
-
-<?php
-
-$response->closeCursor() ;
-?>
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=12 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q12bool)) && ($q12bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q12answer; ?> </p> <?php } ?>
 
   <!-- Question 5 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=13 " );
-      $test = $bdd->query("SELECT * FROM `user_answer` WHERE answer_id=13 " );
-($results = $response->fetch() );
-($ans = $test->fetch() );
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p> De quel couleur est le soleil la nuit  ? </p>
-  <p> <?php if($ans['user_answer_text']==$results['answer_text']){
-  echo"Bonne réponse";}
-  else {
-  echo $results['answer_text'];}  ?>  </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=13 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-<?php
-
-$response->closeCursor() ;
-?>
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=13 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q13bool)) && ($q13bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q13answer; ?> </p> <?php } ?>
 
   <!-- Question 6 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=14 " );
-      $test=$bdd->query("SELECT * FROM `user_answer` WHERE answer_id=14 " );
-($results = $response->fetch() );
-($ans = $test->fetch() );
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p> De quelle forme est la terre ? </p>
-   <?php
-  if($ans['user_answer_text']==$results['answer_text']){
-  echo"Bonne réponse";}
-  else {
-  echo $results['answer_text'];} 
-  ?>  
-<?php
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=14 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-$response->closeCursor() ;
-?>
-
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=14 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q14bool)) && ($q14bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q14answer; ?> </p> <?php } ?>
 
   <!-- Question 7 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=15 " );
-      $test = $bdd->query("SELECT * FROM `user_answer` WHERE answer_id=15 " );
-($results = $response->fetch() );
-($ans = $test->fetch() );
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p>   Quam multa enim I + II ? </p>
-  <p> <?php if($ans['user_answer_text']==$results['answer_text']){
-  echo"Bonne réponse";}
-  else {
-  echo $results['answer_text'];} ?> </p>
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=15 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-<?php
-
-$response->closeCursor() ;
-?>
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=15 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q15bool)) && ($q15bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q15answer; ?> </p> <?php } ?>
 
   <!-- Question 8 -->
 
-<?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=16 " );
+  <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=16 " ); $results = $response->fetch() ?>
+  <h3  ><br><br> Question Numéro <?php echo ($results['question_id']-8); ?>  !<br><br>  </h3>
+  <p>  <?php echo $results['question_title']; ?> </p>
 
-($results = $response->fetch() );
-($ans = $test->fetch() );
- ?>
-  <h3  ><br><br> Question Numéro <?php echo $results['answer_question_id']; ?> !<br><br>  </h3>
-  <p> Combien y-a-t'il de "u" dans Jacque Chirac ? </p>
-  <p><span class="lastQuestion"> <?php echo $results['answer_text']; ?> </span></p>
-
-<?php
-}
-$response->closeCursor() ;
-?>
-
+  <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=16 " ); $results = $response->fetch() ?>
+  <?php if ((isset($q16bool)) && ($q16bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q16answer; ?> </p> <?php } ?>
 
 
 
 
 </body>
 </html>
-
