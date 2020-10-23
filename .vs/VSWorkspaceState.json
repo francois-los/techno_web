@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\CSS",
+    "\\HTML",
+    "\\PHP",
+    "\\Ressources",
+    "\\SQL"
   ],
-  "SelectedNode": "\\CSS",
+  "SelectedNode": "\\Ressources\\bannierequiz1.jpg",
   "PreviewInSolutionExplorer": false
 }

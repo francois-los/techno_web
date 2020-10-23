@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  ven. 23 oct. 2020 à 19:02
+-- Généré le :  ven. 23 oct. 2020 à 19:16
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -85,7 +85,7 @@ INSERT INTO `question` (`question_id`, `question_title`, `question_quizz_id`, `q
 (3, 'Quelle est la date de naissance de la reine d\'Angleterre ?', 1, 'select'),
 (4, 'Combien y-a-t\'il de pays en Afrique ?', 1, 'number'),
 (5, 'Quelle est la date de la bataille de Bouvines ?', 1, 'radio'),
-(6, 'Qui est le pharaon de Moïse ?', 1, 'checkbox'),
+(6, 'Qui est le pharaon de Moise ?', 1, 'checkbox'),
 (7, 'Combien d\'annees ont dure les croisades ?', 1, 'select'),
 (8, 'Combien y-a-t\'il eu de roi en France ?', 1, 'number'),
 (9, 'Quelle est la couleur du cheval blanc d\'Henri 4 ?', 2, 'radio'),

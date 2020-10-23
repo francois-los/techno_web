@@ -44,7 +44,7 @@
 
   <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=10 " ); $results = $response->fetch() ?>
   <?php if ((isset($q2bool)) && ($q2bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
-  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q2answer; ?> </p> <?php } ?>
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q2answerfaux; ?> </p> <?php } ?>
 
   <!-- Question 3 -->
 
@@ -84,7 +84,7 @@
 
   <?php $response = $bdd->query("SELECT * FROM `answer` WHERE answer_id=14 " ); $results = $response->fetch() ?>
   <?php if ((isset($q6bool)) && ($q6bool== true)) {?> <p id="qtrue" > <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <?php } 
-  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q6answer; ?> </p> <?php } ?>
+  else {?> <p id ="qtrue"> <br> [VRAI] <?php echo $results['answer_text']; ?> </p> <p id ="qfalse"> <br> [FAUX] <?php echo $q6answerfaux; ?> </p> <?php } ?>
 
   <!-- Question 7 -->
 

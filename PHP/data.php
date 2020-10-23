@@ -64,7 +64,8 @@ if (isset($_POST['validerQuizz1'])) {
 	else {
 		$q2answer3 = "";
 	}
-	$q2answer = $q2answer1." ".$q2answer2." ".$q2answer3;
+	$q2answer = $q2answer1.$q2answer2.$q2answer3;
+	$q2answerfaux = $q2answer1." ".$q2answer2." ".$q2answer3;
 	if (isset($_POST['q3answer'])){
 		$q3answer = $_POST['q3answer'];
 	}
@@ -101,7 +102,8 @@ if (isset($_POST['validerQuizz1'])) {
 	else { 
 		$q6answer3 = "";
 	}
-	$q6answer = $q6answer1." ".$q6answer2." ".$q6answer3;
+	$q6answer = $q6answer1.$q6answer2.$q6answer3;
+	$q6answerfaux = $q6answer1." ".$q6answer2." ".$q6answer3;
 	if (isset($_POST['q7answer'])){
 		$q7answer = $_POST['q7answer'];
 	}
@@ -190,7 +192,8 @@ if (isset($_POST['validerQuizz2'])) {
 	else {
 		$q2answer3 = "";
 	}
-	$q2answer = $q2answer1." ".$q2answer2." ".$q2answer3;
+	$q2answer = $q2answer1.$q2answer2.$q2answer3;
+	$q2answerfaux = $q2answer1." ".$q2answer2." ".$q2answer3;
 	if (isset($_POST['q3answer'])){
 		$q3answer = $_POST['q3answer'];
 	}
@@ -227,7 +230,8 @@ if (isset($_POST['validerQuizz2'])) {
 	else { 
 		$q6answer3 = "";
 	}
-	$q6answer = $q6answer1." ".$q6answer2." ".$q6answer3;
+	$q6answer = $q6answer1.$q6answer2.$q6answer3;
+	$q6answerfaux = $q6answer1." ".$q6answer2." ".$q6answer3;
 	if (isset($_POST['q7answer'])){
 		$q7answer = $_POST['q7answer'];
 	}
