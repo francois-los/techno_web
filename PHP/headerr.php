@@ -6,7 +6,7 @@
     <meta charset="utf-8">
 </head>
 <body>
-    <header>
+    <header class="bkheader">
 
             <nav class="navigation1">
                 <ul class="navigationListe">
@@ -15,7 +15,7 @@
                 			<br />
                 			Please connect to access quizzes
                 		<?php } else { ?>
-                			<li><a href="../PHP/quiz1.php" title="Go to Quiz 1">Quizz 1</a></li>
+                			<li><a href="../PHP/quiz1.php" title="Go to Quiz 1" >Quizz 1</a></li>
                     		<li><a href="../PHP/quiz2.php" title="Go to Quiz 2">Quizz 2</a></li>
                     	<?php } ?>
                 </ul>

@@ -13,13 +13,13 @@
   <title>Home</title>
 </head>
 
-<body>
+<body class="bkhome">
 
 
 <section>
   <div class="container">
-    <div class="background-img2">
-        <div class="box">
+    <div class="background-img3">
+        <div class="box3">
         <div class="content">
         	<?php  if (isset($_SESSION['username'])) : ?>
 	    		<h1>Welcome <?php echo $_SESSION['username']; ?></h1>
