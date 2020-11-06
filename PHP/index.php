@@ -8,6 +8,8 @@
 <body>
 
 <?php
+    // En attente des nouvelles redirections
+    session_start();
 
     include('data.php');
     include('headerr.php');
@@ -17,7 +19,7 @@
     if($_GET['direction']==NULL)
     {
         $direction = '';
-
+        include("home.php");
     }
     else
     {
@@ -37,8 +39,7 @@
             break;
         case "create":
             include('creatAccount.php'); 
-            break;
-            
+            break; 
         default:
             include('home.php');
         break;
