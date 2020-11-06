@@ -8,43 +8,43 @@
 <body>
 
 <?php
-    // En attente des nouvelles redirections
     session_start();
-
+    error_reporting(E_ALL);
     include('data.php');
     include('headerr.php');
-    include('footer.php');
+    include('../HTML/footer.html');
     // include('');  page des fonctions, si créée
 
-    if($_GET['direction']==NULL)
+    if(isset($_GET['p']))
     {
-        $direction = '';
-        include("home.php");
-    }
-    else
+        $page = $_GET['p'];
+        switch ($page) 
     {
-        $direction = $_GET['direction'];
-    }
-
-    switch ($direction) 
-    {
-        case "home":
-            include('home.php');
-            break;
         case "quizz":
-            include('quizz.php'); // regroupement des 2 quizz
+            include('quiz1.php'); // regroupement des 2 quizz
             break;
         case "reponse":
-            include('reponsequizz.php'); // regrouprement des 2 réponses
+            include('reponsequizz1.php'); // regrouprement des 2 réponses
             break;
         case "create":
-            include('creatAccount.php'); 
+            include('createAccount.php'); 
+            break; 
+        case "home":
+            include('home.php'); 
             break; 
         default:
-            include('home.php');
-        break;
+            echo"La page n'a pas été trouvée";
+        	break;
         
     }
+    }
+    else
+    {	$page = '';
+        include("home.php");
+       	
+    }
+
+    
 ?>
 
 </body>
