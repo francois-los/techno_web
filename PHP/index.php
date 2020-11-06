@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Quizz</title>
+    <link href="../CSS/cssProjetSite.css" rel="stylesheet" />
+</head>
+<body>
+
 <?php
 
     include('data.php');
@@ -36,3 +45,6 @@
         
     }
 ?>
+
+</body>
+</html>
