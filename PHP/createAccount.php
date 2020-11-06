@@ -1,6 +1,4 @@
 <html lang="FR">
-<?php include('headerr.php')?>
-<?php include('../HTML/footer.html')?>
 <head>
     <title>Create your account</title>
 </head>
