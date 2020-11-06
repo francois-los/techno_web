@@ -1,6 +1,5 @@
 <html lang="fr">
-<?php include('headerr.php')?>
-<?php include('../HTML/footer.html')?>
+
 <?php 
 	if (isset($_GET['logout'])) {
 		session_destroy();
