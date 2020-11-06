@@ -48,7 +48,7 @@
                 <input type="submit" name="signup_user" value="Validate">
             </div>
             <div class="form-input">
-                <input type="button" name="" value="Back home to connect" onclick=self.location.href="home.php">
+                <input type="button" name="" value="Back home to connect" onclick=self.location.href="./index.php?p=home">
             </div>
         </div>
     </form>
