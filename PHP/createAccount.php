@@ -1,10 +1,11 @@
 <html lang="FR">
+
 <head>
     <title>Create your account</title>
 </head>
 <body>
 
-    <form id="signup-form" action="createAccount.php" method="post">
+    <form id="signup-form" action="./?p=create" method="post">
         <h2>Create your account</h2>
 
         <div id="container-form">
