@@ -1,50 +1,78 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Quizz</title>
-    <link href="../CSS/cssProjetSite.css" rel="stylesheet" />
-</head>
-<body>
-
 <?php
-    error_reporting(E_ALL);
-    include('headerr.php');
-    include('../HTML/footer.html');
-    $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root','');
-    // include('');  page des fonctions, si créée
 
-    if(isset($_GET['p']))
-    {
-        $page = $_GET['p'];
-        switch ($page) 
-    {
-        case "quizz":
-            include('quiz2.php'); // regroupement des 2 quizz
-            break;
-        case "reponse":
-            include('reponsequizz2.php'); // regrouprement des 2 réponses
-            break;
-        case "create":
-            include('createAccount.php'); 
-            break; 
-        case "home":
-            include('home.php'); 
-            break; 
-        default:
-            echo"La page n'a pas été trouvée";
-        	break;
-        
-    }
-    }
-    else
-    {	
-        include("home.php");
-       	
-    }
+	session_start();
 
-    
+	include ('data.php');
+
+	//Database variable connexion is set in the 1st line of data.php
+
 ?>
 
-</body>
+
+<html>
+<head>
+	<link href="../CSS/cssProjetSite.css" rel="stylesheet" />
+	<meta charset="utf-8">
+	<title>Quizz site</title>
+</head>
+
+
+<?php
+
+	//check_user TODO with !empty
+	if (!empty($_SESSION['username'])){
+		$userconnected = true;
+	}
+	else{
+		$userconnected = false;
+	}
+
+?>
+
+
+<?php
+
+	//TODO (in the next step) control user access
+	if (isset ($_GET['direction'])) {
+
+		$direction = $_GET['direction'];
+
+		if (file_exists($direction.'.php')) {
+
+			if ($direction == 'quiz' OR $direction == 'reponsequizz'){
+				if ($userconnected) {
+					include ($direction.'.php');
+				}
+				else{
+
+					include("home.php");
+
+				}
+			}
+			else {
+				include ($direction.'.php');
+			}
+
+    	}
+    	else {
+
+    		include('home.php');
+    	}
+    	
+	}
+	else {
+
+		include("home.php");
+
+	}
+
+
+?>
+
+<?php
+
+	//The header is present in every page
+
+?>
+
 </html>
