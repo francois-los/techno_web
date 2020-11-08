@@ -1,6 +1,5 @@
 <html lang="fr">
-<?php include('headerr.php')?>
-<?php include('../HTML/footer.html')?>
+
 <head>
   <title>Quiz2</title>
 </head>
@@ -30,7 +29,7 @@
  <!-- Question 1 -->
 
 
-<form action ="reponsequizz2.php" method="post">
+<form action ="./?p=reponse" method="post">
 
   <div class="bk2noir">
     <?php $response = $bdd->query("SELECT * FROM `question` WHERE question_id=9 " ); $results = $response->fetch() ?>
