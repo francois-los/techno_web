@@ -15,7 +15,7 @@ if (isset($_POST['signup_user'])) {
 
 	$request = $bdd->query("INSERT INTO user (username, user_last_name, user_first_name, user_adress, user_phone, user_birthdate, user_password, score_quizz1, score_quizz2) VALUES ('$username', '$name', '$firstname', '$adress', '$number', '$birthdate', '$password', 0, 0)");
 	$_SESSION['username'] = $username;
-	header('Location: home.php');
+	header('Location: index.php');
 }
 
 //LOGIN A USER
@@ -27,7 +27,7 @@ if (isset($_POST['login_user'])) {
 	$request = $bdd->query("SELECT username FROM user WHERE username = '$username' AND user_password = '$password'");
 	if ($request->rowCount() == 1){
 		$_SESSION['username'] = $username;
-  	  	header('Location: home.php');
+  	  	header('Location: index.php');
 	}
 	else{
 		$error1 = "Wrong username or password";
