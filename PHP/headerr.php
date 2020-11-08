@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php include ('data.php') ?>
 <html>
 <head>
     <link href="../CSS/cssProjetSite.css" rel="stylesheet" />

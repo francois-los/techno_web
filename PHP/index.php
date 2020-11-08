@@ -8,7 +8,7 @@
 <body>
 
 <?php
-    session_start();
+
     error_reporting(E_ALL);
     include('data.php');
     include('headerr.php');
