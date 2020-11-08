@@ -8,9 +8,7 @@
 <body>
 
 <?php
-
     error_reporting(E_ALL);
-    include('data.php');
     include('headerr.php');
     include('../HTML/footer.html');
     // include('');  page des fonctions, si créée
@@ -21,10 +19,10 @@
         switch ($page) 
     {
         case "quizz":
-            include('quiz1.php'); // regroupement des 2 quizz
+            include('quiz2.php'); // regroupement des 2 quizz
             break;
         case "reponse":
-            include('reponsequizz1.php'); // regrouprement des 2 réponses
+            include('reponsequizz2.php'); // regrouprement des 2 réponses
             break;
         case "create":
             include('createAccount.php'); 
@@ -39,7 +37,7 @@
     }
     }
     else
-    {	$page = '';
+    {	
         include("home.php");
        	
     }
