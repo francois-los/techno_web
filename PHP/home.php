@@ -1,16 +1,12 @@
-<html lang="fr">
-
+<?php include('headerr.php')?>
+<?php include('../HTML/footer.html')?>
 <?php 
 	if (isset($_GET['logout'])) {
 		session_destroy();
 		unset($_SESSION['username']);
-		unset($_SESSION['success']);
-		header('location: index.php');
+		header('location: index.php?direction=home');
 	}
 ?>
-<head>
-  <title>Home</title>
-</head>
 
 <body class="bkhome">
 
@@ -18,7 +14,7 @@
 <section>
   <div class="container">
     <div class="background-img3">
-        <div class="box3">
+        <div class="box">
         <div class="content">
         	<?php  if (isset($_SESSION['username'])) : ?>
 	    		<h1>Welcome <?php echo $_SESSION['username']; ?></h1>
@@ -31,5 +27,3 @@
   </div>
 </section>
 </body>
-
-</html>
