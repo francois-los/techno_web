@@ -3,7 +3,6 @@
 }
 
 body {
-    background-image: url("../Ressources/backgroundBlueGradient.jpg");
     background-size: cover;
     color: white;
     text-align: center
@@ -12,12 +11,19 @@ body {
 .bkq1 {
     background-image: url("../Ressources/Q1BK.jpg");
 }
+
 .bkq2 {
-    background-image: url("../Ressources/Q2BK.jpg");
+	background-image: url("../Ressources/Q2BK.jpg");
 }
+
 .bkhome {
     background-image: url("../Ressources/BKhome.jpg");
 }
+
+.bkcreate {
+    background-image: url("../Ressources/BKcreate.jpg");
+}
+
 
 .bkheader {
     background-image: url("../Ressources/BKheader.jpg");
@@ -28,11 +34,11 @@ body {
 }
 
 
-.bk1noir,.bk2noir{
+.bknoir{
     background: rgba(1, 1, 15, 0.35);
     position:relative;
-    margin-right: 600px;
-    margin-left: 600px;
+    margin-right: 31%;
+    margin-left: 31%;
 
     margin-bottom: 50px;
     padding-bottom: 40px;
@@ -170,15 +176,16 @@ h1 {
     margin: 10px 0px 0px 10px;
 }
 
+
 #signup-form {
     background-color: rgba(50,50,50,.5);
     color: white;
     position: absolute;
     transform: translate(-50%, -50%);
-    margin-top: 37%;
+    margin-top: 20%;
     left: 50%;
-    width: auto;
-    height: auto;
+    width: 35%;
+    height: 55%;
     padding-left: 3%;
     padding-right: 3%;
     padding-bottom: 5%;
@@ -193,7 +200,7 @@ h1 {
 
     #signup-form .form-input {
         position: relative;
-        margin: 20px 0;
+        margin: 2% 0;
         text-align: center;
     }
 
@@ -254,7 +261,7 @@ h3 {
 }
 
 .background-img2 {
-    background-image: url("../Ressources/Q2BKentete.jpg");
+    background-image: url("../Ressources/entetereponse.jpg");
     background-position: 25% 75%;
 
     height: 100px;
@@ -289,22 +296,8 @@ h3 {
     text-align: center
 }
 
-.box3 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    height: 80px;
-    background: rgba(1, 1, 1, 0.1);
-    box-sizing: border-box;
-    overflow: hidden;
-    box-shadow: 0 25px 35px rgba(1,1,1,0.6);
-    color: white;
-    padding: 20px;
-}
 
-.box,.box2{
+.box {
     position: absolute;
     top: 50%;
     left: 50%;
