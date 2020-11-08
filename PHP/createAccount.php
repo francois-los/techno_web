@@ -1,12 +1,9 @@
-<html lang="FR">
 <?php include('headerr.php')?>
 <?php include('../HTML/footer.html')?>
-<head>
-    <title>Create your account</title>
-</head>
-<body>
 
-    <form id="signup-form" action="createAccount.php" method="post">
+<body  class="bkcreate">
+
+    <form id="signup-form" action="index.php?direction=home" method="post">
         <h2>Create your account</h2>
 
         <div id="container-form">
@@ -49,11 +46,7 @@
             <div class="form-input">
                 <input type="submit" name="signup_user" value="Validate">
             </div>
-            <div class="form-input">
-                <input type="button" name="" value="Back home to connect" onclick=self.location.href="home.php">
-            </div>
         </div>
     </form>
 </body>
-</html>
            

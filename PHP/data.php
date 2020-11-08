@@ -1,6 +1,26 @@
 <?php
-session_start();
+
 $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root','');
+
+//On récupère tous les quizzs id
+$quizzidarray = array();
+$request = $bdd->query("SELECT quizz_id FROM quizz ");
+while ($results=$request->fetch()){
+
+	array_push($quizzidarray, $results[0]);
+	
+}
+
+$questionarray = array();
+
+if (isset($quizzid)) {
+	$request = $bdd->query("SELECT * FROM question WHERE question_quizz_id = $quizzid");
+	while ($results=$request->fetch()){
+
+		$questionarray[$results[0]] = array('Question' => $results[1], 'Type de question' => $results[3], 'Question id' => $results[0]);
+
+	}
+}
 
 //CREATE AN ACCOUNT
 
@@ -12,10 +32,9 @@ if (isset($_POST['signup_user'])) {
 	$number = $_POST['input_numero'];
 	$birthdate = $_POST['input_date_naissance'];
 	$password = md5($_POST['input_mdp']);
-
-	$request = $bdd->query("INSERT INTO user (username, user_last_name, user_first_name, user_adress, user_phone, user_birthdate, user_password, score_quizz1, score_quizz2) VALUES ('$username', '$name', '$firstname', '$adress', '$number', '$birthdate', '$password', 0, 0)");
+	$request = $bdd->query("INSERT INTO user (username, user_last_name, user_first_name, user_adress, user_phone, user_birthdate, user_password) VALUES ('$username', '$name', '$firstname', '$adress', '$number', '$birthdate', '$password')");
 	$_SESSION['username'] = $username;
-	header('Location: home.php');
+	header('Location: index.php?direction=home');
 }
 
 //LOGIN A USER
@@ -27,268 +46,70 @@ if (isset($_POST['login_user'])) {
 	$request = $bdd->query("SELECT username FROM user WHERE username = '$username' AND user_password = '$password'");
 	if ($request->rowCount() == 1){
 		$_SESSION['username'] = $username;
-  	  	header('Location: home.php');
+  	  	header('Location: index.php?direction=home');
 	}
 	else{
 		$error1 = "Wrong username or password";
 	}
 }
 
-//VALIDATION QUIZZ 1 
+//VALIDATION QUIZZ
 
-if (isset($_POST['validerQuizz1'])) {
-	$score = 0;
-	$username = $_SESSION['username'];
-	$q1bool = false; $q2bool = false; $q3bool = false; $q4bool = false; $q5bool = false; $q6bool = false; $q7bool = false; $q8bool = false;
-	if (isset($_POST['q1answer'])){
-		$q1answer = $_POST['q1answer'];
-	}
-	else {
-		$q1answer = "";
-	}
-	if (isset($_POST['q2answer1'])){
-		$q2answer1 = $_POST['q2answer1'];
-	}
-	else {
-		$q2answer1 = "";
-	}
-	if (isset($_POST['q2answer2'])){
-		$q2answer2 = $_POST['q2answer2'];
-	}
-	else {
-		$q2answer2 = "";
-	}
-	if (isset($_POST['q2answer3'])){
-		$q2answer3 = $_POST['q2answer3'];
-	}
-	else {
-		$q2answer3 = "";
-	}
-	$q2answer = $q2answer1.$q2answer2.$q2answer3;
-	$q2answerfaux = $q2answer1." ".$q2answer2." ".$q2answer3;
-	if (isset($_POST['q3answer'])){
-		$q3answer = $_POST['q3answer'];
-	}
-	else {
-		$q3answer = "";
-	}
-	if (isset($_POST['q4answer'])){
-		$q4answer = $_POST['q4answer'];
-	}
-	else {
-		$q4answer = "";
-	}
-	if (isset($_POST['q5answer'])){
-		$q5answer = $_POST['q5answer'];
-	}
-	else {
-		$q5answer = "";
-	}
-	if (isset($_POST['q6answer1'])){
-		$q6answer1 = $_POST['q6answer1'];
-	}
-	else {
-		$q6answer1 = "";
-	}
-	if (isset($_POST['q6answer2'])){
-		$q6answer2 = $_POST['q6answer2'];
-	}
-	else {
-		$q6answer2 = "";
-	}
-	if (isset($_POST['q6answer3'])){
-		$q6answer3 = $_POST['q6answer3'];
-	}
-	else { 
-		$q6answer3 = "";
-	}
-	$q6answer = $q6answer1.$q6answer2.$q6answer3;
-	$q6answerfaux = $q6answer1." ".$q6answer2." ".$q6answer3;
-	if (isset($_POST['q7answer'])){
-		$q7answer = $_POST['q7answer'];
-	}
-	else {
-		$q7answer = "";
-	}
-	if (isset($_POST['q8answer'])){
-		$q8answer = $_POST['q8answer'];
-	}
-	else {
-		$q8answer = "";
-	}
-	$request = $bdd->query("SELECT answer_text FROM answer LIMIT 8");
-	$results=$request->fetch();
-	if ($q1answer == $results['answer_text']){
-		$q1bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q2answer == $results['answer_text']){
-		$q2bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q3answer == $results['answer_text']){
-		$q3bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q4answer == $results['answer_text']){
-		$q4bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q5answer == $results['answer_text']){
-		$q5bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q6answer == $results['answer_text']){
-		$q6bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q7answer == $results['answer_text']){
-		$q7bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q8answer == $results['answer_text']){
-		$q8bool = true;
-		$score = $score + 1;
-	}
-	$request2 = "UPDATE user SET score_quizz1=? WHERE username=?";
-	$stmt= $bdd->prepare($request2);
-	$stmt->execute([$score, $username]);
-}
+if (isset($_POST['validerQuizz'])) {
 
-//VALIDATION QUIZZ 2
+	$request = $bdd->prepare("SELECT user_id FROM user WHERE username =?");
+	$request->execute([$_SESSION['username']]);
+	$user_id = $request->fetch();
 
-if (isset($_POST['validerQuizz2'])) {
-	$score = 0;
-	$username = $_SESSION['username'];
-	$q1bool = false; $q2bool = false; $q3bool = false; $q4bool = false; $q5bool = false; $q6bool = false; $q7bool = false; $q8bool = false;
-	if (isset($_POST['q1answer'])){
-		$q1answer = $_POST['q1answer'];
+	$array_reponse = $_POST['$reponse_user_array'];
+
+	$request2 = $bdd->prepare("DELETE FROM user_answer WHERE user_id = ?");
+	$request2->execute([$user_id[0]]);
+
+	foreach ($array_reponse as $key => $value) {
+		$request3 = $bdd->prepare("INSERT INTO user_answer (user_id,answer_id) VALUES (?,?)");
+		$request3->execute([$user_id[0], $value]);
 	}
-	else {
-		$q1answer = "";
+
+
+	$array_number = $_POST['$reponse_number_array'];
+
+	$liste_id_number=array();
+	$quizzid= $_GET['id'];
+	$request4 = $bdd->prepare("SELECT question_id FROM  question WHERE question_input_type='number' AND question_quizz_id = ?" );
+	$request4->execute([$quizzid]);
+
+	$idx = 0;
+
+
+	while ($results=$request4->fetch()){
+
+		
+    	$liste_id_number[$results[0]]=$array_number[$idx];
+    	$idx = $idx +1;
+  	}
+
+
+   	$listereponsesnumber=array();
+
+
+	foreach ($liste_id_number as $question_id => $value1) {
+		$request5 = $bdd->prepare("SELECT answer_text FROM  answer WHERE is_valid_answer=1 AND answer_question_id=?");
+
+		$request5->execute([$question_id]);
+		$results=$request5->fetch();
+
+		if ($results[0]==$value1) {
+			$listereponsesnumber[]=array('is_valid_answer'=>1,'answer_question_id'=>$question_id);
+		}
+		else{
+
+			$listereponsesnumber[]=array('is_valid_answer'=>0,'answer_question_id'=>$question_id);
+		}
 	}
-	if (isset($_POST['q2answer1'])){
-		$q2answer1 = $_POST['q2answer1'];
-	}
-	else {
-		$q2answer1 = "";
-	}
-	if (isset($_POST['q2answer2'])){
-		$q2answer2 = $_POST['q2answer2'];
-	}
-	else {
-		$q2answer2 = "";
-	}
-	if (isset($_POST['q2answer3'])){
-		$q2answer3 = $_POST['q2answer3'];
-	}
-	else {
-		$q2answer3 = "";
-	}
-	$q2answer = $q2answer1.$q2answer2.$q2answer3;
-	$q2answerfaux = $q2answer1." ".$q2answer2." ".$q2answer3;
-	if (isset($_POST['q3answer'])){
-		$q3answer = $_POST['q3answer'];
-	}
-	else {
-		$q3answer = "";
-	}
-	if (isset($_POST['q4answer'])){
-		$q4answer = $_POST['q4answer'];
-	}
-	else {
-		$q4answer = "";
-	}
-	if (isset($_POST['q5answer'])){
-		$q5answer = $_POST['q5answer'];
-	}
-	else {
-		$q5answer = "";
-	}
-	if (isset($_POST['q6answer1'])){
-		$q6answer1 = $_POST['q6answer1'];
-	}
-	else {
-		$q6answer1 = "";
-	}
-	if (isset($_POST['q6answer2'])){
-		$q6answer2 = $_POST['q6answer2'];
-	}
-	else {
-		$q6answer2 = "";
-	}
-	if (isset($_POST['q6answer3'])){
-		$q6answer3 = $_POST['q6answer3'];
-	}
-	else { 
-		$q6answer3 = "";
-	}
-	$q6answer = $q6answer1.$q6answer2.$q6answer3;
-	$q6answerfaux = $q6answer1." ".$q6answer2." ".$q6answer3;
-	if (isset($_POST['q7answer'])){
-		$q7answer = $_POST['q7answer'];
-	}
-	else {
-		$q7answer = "";
-	}
-	if (isset($_POST['q8answer'])){
-		$q8answer = $_POST['q8answer'];
-	}
-	else {
-		$q8answer = "";
-	}
-	$request = $bdd->query("SELECT answer_text FROM answer LIMIT 8,8");
-	$results=$request->fetch();
-	if ($q1answer == $results['answer_text']){
-		$q1bool = true;
-	}
-	$results=$request->fetch();
-	if ($q2answer == $results['answer_text']){
-		$q2bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q3answer == $results['answer_text']){
-		$q3bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q4answer == $results['answer_text']){
-		$q4bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q5answer == $results['answer_text']){
-		$q5bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q6answer == $results['answer_text']){
-		$q6bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q7answer == $results['answer_text']){
-		$q7bool = true;
-		$score = $score + 1;
-	}
-	$results=$request->fetch();
-	if ($q8answer == $results['answer_text']){
-		$q8bool = true;
-		$score = $score + 1;
-	}
-	$request2 = "UPDATE user SET score_quizz2=? WHERE username=?";
-	$stmt= $bdd->prepare($request2);
-	$stmt->execute([$score, $username]);
-}
+
+
+} 
+
 
 ?>
-
-

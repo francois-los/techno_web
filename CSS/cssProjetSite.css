@@ -3,11 +3,59 @@
 }
 
 body {
-    background-image: url("../Ressources/backgroundBlueGradient.jpg");
     background-size: cover;
     color: white;
     text-align: center
 }
+
+.bkq1 {
+    background-image: url("../Ressources/Q1BK.jpg");
+}
+
+.bkq2 {
+	background-image: url("../Ressources/Q2BK.jpg");
+}
+
+.bkhome {
+    background-image: url("../Ressources/BKhome.jpg");
+}
+
+.bkcreate {
+    background-image: url("../Ressources/BKcreate.jpg");
+}
+
+
+.bkheader {
+    background-image: url("../Ressources/BKheader.jpg");
+    background-position: 0% 50%;
+    background-repeat:no-repeat;
+    background-size: cover;
+    box-shadow: 0 25px 35px rgba(1,1,1,0.7);
+}
+
+
+.bknoir{
+    background: rgba(1, 1, 15, 0.35);
+    position:relative;
+    margin-right: 31%;
+    margin-left: 31%;
+
+    margin-bottom: 50px;
+    padding-bottom: 40px;
+
+    margin-top: 50px;
+    box-shadow: 0 25px 35px rgba(1,1,1,0.7);
+
+}
+
+
+
+
+
+.container{
+    margin-top: 20px;
+}
+
 
 header {
     padding: 20px 20px 10px 20px;
@@ -15,6 +63,7 @@ header {
     color: cornsilk;
     font-size: 20px;
     height: 90px;
+    z-index: 1;    
 }
 
 footer {
@@ -27,6 +76,7 @@ footer {
     height: 40px;
     bottom: 0px;
     margin-top: 30px;
+    z-index: 1;
     
 }
 
@@ -50,6 +100,7 @@ footer {
         border: solid 1px white;
         cursor: pointer;
         width: 52%;
+        margin-top: 2%;
     }
 
         .loginForm input[type="button"] {
@@ -57,6 +108,7 @@ footer {
             border: solid 1px white;
             cursor: pointer;
             width: 52%;
+            margin-top: 2%;
         }
 
 .logout {
@@ -124,16 +176,19 @@ h1 {
     margin: 10px 0px 0px 10px;
 }
 
+
 #signup-form {
     background-color: rgba(50,50,50,.5);
     color: white;
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 55%;
+    margin-top: 20%;
     left: 50%;
-    width: 800px;
-    height: 75%;
-    padding: 10px 0;
+    width: 35%;
+    height: 55%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-bottom: 5%;
 }
 
     #signup-form h2 {
@@ -145,7 +200,7 @@ h1 {
 
     #signup-form .form-input {
         position: relative;
-        margin: 20px 0;
+        margin: 2% 0;
         text-align: center;
     }
 
@@ -190,53 +245,69 @@ h3 {
     text-decoration: underline;
 }
 
-.background-img2 {
-    background-image: url("../Ressources/banniere2.jpg");
-    height: 100px;
-    width: 800px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #2a3cad;
-    border-radius: 4px;
-    box-shadow: 0px 0px 5px #2a3cad;
-    position: relative;
-}
+.background-img3 {
+    background-image: url("../Ressources/BKhomeentete.jpg");
+    background-position: 10% 0%;
 
-
-.background-img {
-    background-image: url("../Ressources/banniere2.jpg");
     height: 100px;
     width: 1000px;
     background-repeat: no-repeat;
     background-size: cover;
     margin: auto;
     padding: 20px;
-    border: 1px solid #2a3cad;
     border-radius: 4px;
-    box-shadow: 0px 0px 5px #2a3cad;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0,0.7);
+    position: relative;
+}
+
+.background-img2 {
+    background-image: url("../Ressources/entetereponse.jpg");
+    background-position: 25% 75%;
+
+    height: 100px;
+    width: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0,0.7);
+    position: relative;
+}
+
+
+.background-img {
+    background-image: url("../Ressources/Q1BKentete.jpg");
+    background-position: 0% 50%;
+    height: 100px;
+    width: 1000px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: auto;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0,0.7);
     position: relative;
 }
 
 
 .content h2 {
-    font-size: 19px;
+    padding-top:5px;
     text-align: center
 }
+
 
 .box {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 300px;
+    width: 400px;
     height: 80px;
-    background: #111845a6;
+    background: rgba(1, 1, 15, 0.3);
     box-sizing: border-box;
     overflow: hidden;
-    box-shadow: 0 20px 50px rgb(23, 32, 90);
-    border: 2px solid #2a3cad;
+    box-shadow: 0 25px 35px rgba(1,1,1,0.6);
     color: white;
     padding: 20px;
 }
