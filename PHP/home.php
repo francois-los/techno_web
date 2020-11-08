@@ -5,7 +5,7 @@
 		session_destroy();
 		unset($_SESSION['username']);
 		unset($_SESSION['success']);
-		header('location: home.php');
+		header('location: index.php');
 	}
 ?>
 <head>
