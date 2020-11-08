@@ -11,6 +11,7 @@
     error_reporting(E_ALL);
     include('headerr.php');
     include('../HTML/footer.html');
+    $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root','');
     // include('');  page des fonctions, si créée
 
     if(isset($_GET['p']))
