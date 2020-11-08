@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="fr">
-<?php include('headerr.php')?>
-<?php include('../HTML/footer.html')?>
+
 <head>
   <title>Quiz2</title>
 </head>
@@ -25,10 +24,10 @@
 </section>
 
 
-<?php $bdd = new PDO('mysql:host=localhost;dbname=quizzsite','root',''); ?>
 
 
-<form action ="reponsequizz.php" method="post">
+
+<form action ="./?p=reponse" method="post">
 
     <!-- Question 1 -->
 
