@@ -19,6 +19,7 @@
             <nav class="navigation2">
                 <ul class="navigationListe">
                     <li><a href="index.php?direction=home" title="Go to home">Home</a></li>
+                    <li><a href="index.php?direction=resume" title="Go to history">History</a></li>
                 </ul>
             </nav>
             <?php
