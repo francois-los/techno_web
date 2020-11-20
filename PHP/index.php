@@ -3,7 +3,7 @@
 	session_start();
 
 	include ('data.php');
-<?php include('../HTML/footer.html');
+	include('../HTML/footer.html');
 
 	//Database variable connexion is set in the 1st line of data.php
 
