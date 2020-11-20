@@ -39,7 +39,7 @@
 
 		if (file_exists($direction.'.php')) {
 
-			if ($direction == 'quiz' OR $direction == 'reponsequizz'){
+			if ($direction == 'quiz' OR $direction == 'reponsequizz') OR $direction == 'resume'){
 				if ($userconnected) {
 					include ($direction.'.php');
 				}
