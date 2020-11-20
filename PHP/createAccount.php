@@ -1,5 +1,4 @@
-<?php include('headerr.php')?>
-<?php include('../HTML/footer.html')?>
+
 
 <body  class="bkcreate">
 
