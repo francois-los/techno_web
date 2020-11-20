@@ -9,7 +9,7 @@ $_SESSION['quizzid'] = $quizzid;
 ?>
 
 <?php include('headerr.php')?>
-<?php include('../HTML/footer.html')?>
+
 <?php include('data.php'); ?>
 
 
