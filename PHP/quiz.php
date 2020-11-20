@@ -8,7 +8,6 @@ if (isset($_GET['id'])){
 $_SESSION['quizzid'] = $quizzid;
 ?>
 
-<?php include('headerr.php')?>
 
 <?php include('data.php'); ?>
 
