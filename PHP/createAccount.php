@@ -1,3 +1,5 @@
+
+
 <body  class="bkcreate">
 
     <form id="signup-form" action="index.php?direction=home" method="post">
@@ -45,9 +47,5 @@
             </div>
         </div>
     </form>
-    <?php if (isset($_GET['retry'])){?>
-    	<span class = error1> This username already exists </span>
-    <?php } ?>
-
 </body>
            

@@ -124,25 +124,8 @@ footer {
     width: 90px;
 }
 
-.quizzresume {
-    margin-top: 2%;
-    padding-left: 35%;
-    width: 400px;
-}
-
-.sous {
-    display: none;
-    box-shadow: 0px 1px 2px;
-    background: white;
-}
-
-nav > ul li:hover .sous{
-    display: block;
-    padding-left: 0;
-}
-
 .navigation1 {
-    margin-top: 20px;
+    margin:20px;
     width: 200px;
     height: 100px;
     float: left;
@@ -176,7 +159,7 @@ nav > ul li:hover .sous{
     width: 150px;
     margin-left: auto;
     margin-right: auto;
-    padding-right: 25%;
+    padding-right: 310px;
 }
 
     .navigation2 li a{
@@ -187,20 +170,6 @@ nav > ul li:hover .sous{
         width: 150px;
         text-decoration: none;
     }
-
-        .navigation2 li a:hover, .navigationListe li a:focus, .navigationListe li a:active {
-            background: #2e0ed5;
-            text-decoration: underline;
-        }
-
-
-.navigation3 {
-    position: absolute;
-    left : 37%;
-    width: 20%;
-    margin-top: 2%;
-}
-
 
 
 h1 {
@@ -321,20 +290,6 @@ h3 {
     position: relative;
 }
 
-.background-img4 {
-    background-image: url("../Ressources/BKresultat.jpg");
-    background-position: 0% 50%;
-    height: 100px;
-    width: 1000px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    margin: auto;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 10px 10px 10px rgb(0, 0, 0,0.7);
-    position: relative;
-}
-
 
 .content h2 {
     padding-top:5px;
@@ -345,12 +300,12 @@ h3 {
 .box {
     position: absolute;
     top: 50%;
-    left: 48%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
     height: 80px;
     background: rgba(1, 1, 15, 0.3);
-    box-sizing: border-box;²
+    box-sizing: border-box;
     overflow: hidden;
     box-shadow: 0 25px 35px rgba(1,1,1,0.6);
     color: white;
@@ -378,80 +333,11 @@ h3 {
     margin-left: 3%;
 }
 
-.successDel {
-    color: green;
-    padding-right: 5%;
-}
-
 
 #qtrue {
-    color: green;
+    color: #13FD01;
 }
 
 #qfalse {
     color: red;
-}
-
-caption {
-    font-size: 1.7em;
-    font-weight: bold;
-}
-
-th {
-    font-size: 1.2em;
-    height: 50px;
-    width: 500px;
-}
-
-td {
-    height: 30px;
-    border: 2px solid black;
-    text-align: center;
-}
-
-.tdgen {
-    height: 30px;
-    border: 3px solid #43900B ;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.thgen {
-    border: 5px solid #1D3E05 ;
-}
-
-.tdgen2 {
-    height: 30px;
-    border: 3px solid #F31F1F ;
-    text-align: center;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
-
-.thgen2 {
-    border: 5px solid #8F1818  ;
-}
-
-.temp {
-    background-image: url("../Ressources/BKANS.jpg");
-}
-.temp2 {
-    background-image: url("../Ressources/BKReponses.jpg");
-}
-
-.tableresult {
-    border-collapse: collapse;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 2%;
-}
-.tableresume {
-    border-collapse: collapse;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 2%;
 }

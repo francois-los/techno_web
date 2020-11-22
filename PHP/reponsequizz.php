@@ -46,19 +46,6 @@ $quizzid= $_GET['id'];
   	 $listereponses[$listereponsesnumber[$i]['answer_question_id']] = strval($listereponsesnumber[$i][ 'is_valid_answer']);
   }
 
-  //Création du score et note sur /10
-  $score = 0;
-  foreach ($listereponses as $key => $value) {
-  	if ($value == 1){
-  		$score++;
-  	}
-  }
-  $scoreSurDix = $score * 10 / sizeof($listereponses);
-  $scoreSurDix = round($scoreSurDix,1);
-
-  $request3 = $bdd->prepare("INSERT INTO score (score_user_id, score_quizz_id, score) VALUES (?,?,?)");
-  $request3->execute([$user_id[0], $quizzid, $scoreSurDix]);
-
 ?>
 
   <?php

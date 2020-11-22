@@ -25,8 +25,6 @@ if (isset($quizzid)) {
 //CREATE AN ACCOUNT
 
 if (isset($_POST['signup_user'])) {
-	$userarray = array();
-	$unicityUsername = true;
 	$username = $_POST['input_username'];
 	$name = $_POST['input_nom'];
 	$firstname = $_POST['input_prenom'];
@@ -34,24 +32,9 @@ if (isset($_POST['signup_user'])) {
 	$number = $_POST['input_numero'];
 	$birthdate = $_POST['input_date_naissance'];
 	$password = md5($_POST['input_mdp']);
-
-	$request = $bdd->query("SELECT username FROM user");
-	while ($results = $request->fetch()){
-		$userarray[] = $results[0]; 
-	}
-	for ($i = 0; $i < sizeof($userarray); $i++){
-		if ($userarray[$i] == $username) { $unicityUsername = false; }
-	}
-	if ($unicityUsername == true){
-		$request2 = $bdd->query("INSERT INTO user (username, user_last_name, user_first_name, user_adress, user_phone, user_birthdate, user_password) VALUES ('$username', '$name', '$firstname', '$adress', '$number', '$birthdate', '$password')");
-		$_SESSION['username'] = $username;
-		header('Location: index.php?direction=home');
-	}
-	else{
-		$errorUsername = "This username already exists";
-		header('Location: index.php?direction=createAccount&retry=1');
-	}
-	var_dump($userarray);
+	$request = $bdd->query("INSERT INTO user (username, user_last_name, user_first_name, user_adress, user_phone, user_birthdate, user_password) VALUES ('$username', '$name', '$firstname', '$adress', '$number', '$birthdate', '$password')");
+	$_SESSION['username'] = $username;
+	header('Location: index.php?direction=home');
 }
 
 //LOGIN A USER
