@@ -1,7 +1,9 @@
 <?php
 
 	session_start();
+
 	include ('data.php');
+	include('headerr.php');
 
 	//Database variable connexion is set in the 1st line of data.php
 
@@ -14,11 +16,6 @@
 	<meta charset="utf-8">
 	<title>Quizz site</title>
 </head>
-<body>
-
-<?php
-	include('headerr.php');
-?>
 
 
 <?php
@@ -43,7 +40,7 @@
 
 		if (file_exists($direction.'.php')) {
 
-			if ($direction == 'quiz' OR $direction == 'reponsequizz' OR $direction == 'resume'){
+			if ($direction == 'quiz' OR $direction == 'reponsequizz'){
 				if ($userconnected) {
 					include ($direction.'.php');
 				}
@@ -74,7 +71,9 @@
 ?>
 
 <?php
+
 	include('../HTML/footer.html');
+
 ?>
-</body>
+
 </html>

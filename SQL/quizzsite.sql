@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  sam. 07 nov. 2020 à 19:42
+-- Généré le :  ven. 20 nov. 2020 à 17:15
 -- Version du serveur :  10.4.10-MariaDB
 -- Version de PHP :  7.3.12
 
@@ -145,6 +145,36 @@ INSERT INTO `quizz` (`quizz_id`, `quizz_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `score`
+--
+
+DROP TABLE IF EXISTS `score`;
+CREATE TABLE IF NOT EXISTS `score` (
+  `score_id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id of the score',
+  `score_user_id` int(11) NOT NULL COMMENT 'score related to user',
+  `score_quizz_id` int(11) NOT NULL COMMENT 'score related to quizz',
+  `score` float NOT NULL COMMENT 'the score',
+  PRIMARY KEY (`score_id`),
+  KEY `score_user_id` (`score_user_id`),
+  KEY `score_quizz_id` (`score_quizz_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `score`
+--
+
+INSERT INTO `score` (`score_id`, `score_user_id`, `score_quizz_id`, `score`) VALUES
+(1, 1, 1, 7.1),
+(3, 1, 1, 6),
+(4, 1, 1, 0),
+(10, 2, 2, 4.3),
+(11, 2, 2, 4.3),
+(12, 2, 2, 2.9),
+(13, 2, 1, 4.3);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `user`
 --
 
@@ -160,7 +190,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `user_password` varchar(255) NOT NULL COMMENT 'User Password',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `user`
@@ -169,7 +199,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 INSERT INTO `user` (`user_id`, `username`, `user_last_name`, `user_first_name`, `user_adress`, `user_phone`, `user_birthdate`, `user_password`) VALUES
 (1, 'CompteTest', 'Bertrand', 'Dubois', '25 avenue de monmiraille', '0607251458', '1981-06-09 00:00:00', '2ac9cb7dc02b3c0083eb70898e549b63'),
 (2, 'Compte2', 'Pierre', 'Ducompte', 'avenue chateau royal', '0614253647', '1993-06-03 00:00:00', '6f9dff5af05096ea9f23cc7bedd65683'),
-(3, 'Alderiate', 'Feneu', 'Charles', '3 rue de la ville', '0615244558', '2020-11-04 00:00:00', '4c3b6c7517e9f780744f6582f2d36fb6');
+(3, 'Alderiate', 'Feneu', 'Charles', '3 rue de la ville', '0615244558', '2020-11-04 00:00:00', '4c3b6c7517e9f780744f6582f2d36fb6'),
+(4, 'Compte3', 'Nomtest', 'Prenomtest', 'rue de test', '0102030405', '2020-11-04 00:00:00', '874fcc6e14275dde5a23319c9ce5f8e4');
 
 -- --------------------------------------------------------
 
@@ -186,19 +217,20 @@ CREATE TABLE IF NOT EXISTS `user_answer` (
   PRIMARY KEY (`user_answer_id`),
   KEY `user_id_fk` (`user_id`),
   KEY `answer_id_fk` (`answer_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=402 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=639 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `user_answer`
 --
 
 INSERT INTO `user_answer` (`user_answer_id`, `user_id`, `answer_id`, `user_answer_date`) VALUES
-(264, 2, 28, '2020-11-07 14:52:49'),
-(265, 2, 37, '2020-11-07 14:52:49'),
-(350, 1, 28, '2020-11-07 15:15:17'),
-(351, 1, 37, '2020-11-07 15:15:17'),
 (400, 3, 28, '2020-11-07 19:37:58'),
-(401, 3, 37, '2020-11-07 19:37:58');
+(401, 3, 37, '2020-11-07 19:37:58'),
+(634, 2, 2, '2020-11-20 17:06:44'),
+(635, 2, 6, '2020-11-20 17:06:44'),
+(636, 2, 9, '2020-11-20 17:06:44'),
+(637, 2, 14, '2020-11-20 17:06:44'),
+(638, 2, 18, '2020-11-20 17:06:44');
 
 --
 -- Contraintes pour les tables déchargées
@@ -209,6 +241,13 @@ INSERT INTO `user_answer` (`user_answer_id`, `user_id`, `answer_id`, `user_answe
 --
 ALTER TABLE `question`
   ADD CONSTRAINT `question_quizz_id_fk` FOREIGN KEY (`question_quizz_id`) REFERENCES `quizz` (`quizz_id`);
+
+--
+-- Contraintes pour la table `score`
+--
+ALTER TABLE `score`
+  ADD CONSTRAINT `score_ibfk2` FOREIGN KEY (`score_quizz_id`) REFERENCES `quizz` (`quizz_id`),
+  ADD CONSTRAINT `score_ibfk_1` FOREIGN KEY (`score_user_id`) REFERENCES `user` (`user_id`);
 
 --
 -- Contraintes pour la table `user_answer`
