@@ -2,15 +2,15 @@
 
         <nav class="navigation1">
             <ul class="navigationListe">
-            	<?php
-            		if (empty($_SESSION['username'])) { ?>
-            			<br />
-            			Please connect to access quizzes
-            		<?php } else { ?>
+                <?php
+                    if (empty($_SESSION['username'])) { ?>
+                        <br />
+                        Please connect to access quizzes
+                    <?php } else { ?>
                         <?php foreach ($quizzidarray as $quizzKey => $quizzValue) {?>
-            			<li><a href="../PHP/index.php?direction=choice&id=<?php echo $quizzValue ?>" title="Go to Quiz <?php echo $quizzValue ?>">Quizz <?php echo $quizzValue ?></a></li>
-                		<?php }?>
-                	<?php } ?>
+                        <li><a href="../PHP/index.php?direction=choice&id=<?php echo $quizzValue ?>" title="Go to Quiz <?php echo $quizzValue ?>">Quizz <?php echo $quizzValue ?></a></li>
+                        <?php }?>
+                    <?php } ?>
             </ul>
         </nav>
         
@@ -20,21 +20,21 @@
             </ul>
         </nav>
         <?php
-        	if (empty($_SESSION['username'])) { ?>
-	            <form method="post" class="loginForm" action="index.php?direction=home">
-	                <label for="identifiant"> Username :	</label>
-	                <input type="text" name="username" id="UsernameId" required/>
-	                <br />
-	                <label for="password"> Password : </label>
-	                <input type="password" name="password" id="passwordId" required/>
-	                <br />
-	                <button type="submit" name='login_user'>Validate</button>
-	                <input type="button" value="Create account" onclick=self.location.href="index.php?direction=createAccount">
-	            </form>
-	       	<?php } else { ?>
-	       		<a href="index.php?direction=home&logout=1" class = "logout">Logout</a>
-	       	<?php } ?>
-	       	<?php if (isset($error1)){?>
+            if (empty($_SESSION['username'])) { ?>
+                <form method="post" class="loginForm" action="index.php?direction=home">
+                    <label for="identifiant"> Username :    </label>
+                    <input type="text" name="username" id="UsernameId" required/>
+                    <br />
+                    <label for="password"> Password : </label>
+                    <input type="password" name="password" id="passwordId" required/>
+                    <br />
+                    <button type="submit" name='login_user'>Validate</button>
+                    <input type="button" value="Create account" onclick=self.location.href="index.php?direction=createAccount">
+                </form>
+            <?php } else { ?>
+                <a href="index.php?direction=home&logout=1" class = "logout">Logout</a>
+            <?php } ?>
+            <?php if (isset($error1)){?>
                 <span> Wrong username or password </span>
             <?php } ?>
             
