@@ -47,24 +47,35 @@ $_SESSION['quizzid'] = $quizzid;
 
 		<tr>
 			<th class="thgen2">Score out of 10</th>
+			<th class="thgen2">Time</th>
 		</tr>
 
 		<?php
 
-			$request = $bdd->prepare("SELECT score.score FROM score INNER JOIN user ON score.score_user_id = user.user_id WHERE score_user_id=? AND score_quizz_id=$quizzid" );
+			$request = $bdd->prepare("SELECT score.score, score.timeQuizz FROM score INNER JOIN user ON score.score_user_id = user.user_id WHERE score_user_id=? AND score_quizz_id=$quizzid ORDER BY  score DESC, timeQuizz" );
 			$request->execute([$user_id[0]]);
 
 			while ($results=$request->fetch()){
-				 ?>
+
+				if ($results['timeQuizz'] >= 60){
+					$minutes = floor($results['timeQuizz'] / 60);
+					$secondes = $results['timeQuizz'] - ($minutes * 60);
+				}
+				else {
+					$secondes = $results['timeQuizz'];
+					$minutes = 0;
+				}
+				$formatedTime = "$minutes min $secondes s";?>
 
 				<tr>
 					<td class="tdgen2"><?php echo $results['score'] ?></td>
+					<td class="tdgen2"><?php echo $formatedTime ?></td>
 				</tr>	
 		<?php 
 
 			}
 
-	}
+		}
 			 ?>
 
 	</table>
