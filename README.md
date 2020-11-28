@@ -3,13 +3,21 @@
 Bonjour, 
 
 
-Les mots de passes étant cryptés, si vous souhaitez utiliser un compte déja existant de la BDD, voici un exemple :
+Les mots de passes étant cryptés, si vous souhaitez utiliser un compte déja existant de la BDD, voici l'exemple du compte administrateur :
 
 
 username : CompteTest
 
 
 password : Password1
+
+
+et voici un compte classique :
+
+username : Valouche
+
+
+password : Password4
 
 
 Ou alors vous pouvez créer votre compte :)
