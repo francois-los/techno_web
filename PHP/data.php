@@ -53,6 +53,75 @@ if (isset($_POST['signup_user'])) {
 	}
 	var_dump($userarray);
 }
+//CREATE A QUIZZ
+
+if (isset($_POST['create_quizz'])) {
+
+	$title = $_POST['input_question'];
+	
+	$request2 = $bdd->query("INSERT INTO quizz (quizz_name) VALUES ('$title')");
+
+	header('Location: index.php?direction=home');
+
+}
+
+
+//MOFIF A QUESTION
+
+if (isset($_POST['modif_question'])) {
+	$userarray = array();
+	if(isset( $_POST['input_question'])){$title = $_POST['input_question'];}
+	$quizz = $_POST['input_quizz'];
+	if(isset($_POST['radio'])){ $radio = $_POST['radio']; }
+	if(isset( $_POST['input_bonne0'])){ $q0 = $_POST['input_bonne0']; }
+	if(isset( $_POST['input_bonne1'])){ $q1 = $_POST['input_bonne1']; }
+	if(isset( $_POST['input_bonne2'])){ $q2 = $_POST['input_bonne2']; }
+
+
+	if(!empty($title)){
+		$request2 = $bdd->prepare("UPDATE question SET question_title = ? WHERE question.question_id = ?");
+		$request2->execute([$title,$quizz]);
+    }
+   
+
+	$request3 = $bdd->prepare("UPDATE  answer  SET  is_valid_answer  = 0 WHERE  answer.answer_question_id  = ?");
+	$request3->execute([$quizz]);
+
+
+	$request4 = $bdd->prepare("SELECT * FROM answer WHERE answer_question_id = ? LIMIT 1");
+	$request4->execute([$quizz]);
+	$results=$request4->fetch();
+
+	$request5 = $bdd->prepare("UPDATE  answer  SET  is_valid_answer  = 1 WHERE  answer.answer_id  = ?+? ");
+	$request5->execute([$results[0],$radio]);
+
+	
+
+	if(!empty($q0)){
+		$request6 = $bdd->prepare("UPDATE  answer  SET  answer_text  = ? WHERE  answer.answer_id  = ?");
+		$request6->execute([$q0,$results[0]]);
+	}
+	if(!empty($q1)){
+		$request7 = $bdd->prepare("UPDATE  answer  SET  answer_text  = ? WHERE  answer.answer_id  = ?+1");
+		$request7->execute([$q1,$results[0]]);
+	}
+	if(!empty($q2)){
+		$request8 = $bdd->prepare("UPDATE  answer  SET  answer_text  = ? WHERE  answer.answer_id  = ?+2");
+		$request8->execute([$q2,$results[0]]);
+	}
+
+	
+
+    	
+
+ 
+
+	
+	header('Location: index.php?direction=home');
+
+}
+
+
 
 //LOGIN A USER
 
