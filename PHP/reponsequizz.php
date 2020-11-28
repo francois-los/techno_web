@@ -1,4 +1,7 @@
-<?php include('data.php') ?>
+<?php include('data.php');
+$_SESSION['finQuizz'] = time();
+$duree = $_SESSION['finQuizz'] - $_SESSION['debutQuizz'];
+ ?>
 
 
 <body class="bkq2">
@@ -43,21 +46,21 @@ $quizzid= $_GET['id'];
   }
 
   for ($i = 0; $i < sizeof($listereponsesnumber); $i++){
-  	 $listereponses[$listereponsesnumber[$i]['answer_question_id']] = strval($listereponsesnumber[$i][ 'is_valid_answer']);
+     $listereponses[$listereponsesnumber[$i]['answer_question_id']] = strval($listereponsesnumber[$i][ 'is_valid_answer']);
   }
 
-  //Création du score et note sur /10
+  //Création du score et note sur /10 et du temps pour réaliser le quizz
   $score = 0;
   foreach ($listereponses as $key => $value) {
-  	if ($value == 1){
-  		$score++;
-  	}
+    if ($value == 1){
+      $score++;
+    }
   }
   $scoreSurDix = $score * 10 / sizeof($listereponses);
   $scoreSurDix = round($scoreSurDix,1);
 
-  $request3 = $bdd->prepare("INSERT INTO score (score_user_id, score_quizz_id, score) VALUES (?,?,?)");
-  $request3->execute([$user_id[0], $quizzid, $scoreSurDix]);
+  $request3 = $bdd->prepare("INSERT INTO score (score_user_id, score_quizz_id, score, timeQuizz) VALUES (?,?,?,?)");
+  $request3->execute([$user_id[0], $quizzid, $scoreSurDix, $duree]);
 
 ?>
 
@@ -96,37 +99,37 @@ $quizzid= $_GET['id'];
 
 
     for ($idx = $questionarraystart; $idx <= $questionarrayend; $idx++) {
-    	
+      
         if (isset($listereponses[$idx])){
 
-	        $question = $questionarray[$idx]['Question'];
-	        $questionid =$questionarray[$idx]['Question_id'];
+          $question = $questionarray[$idx]['Question'];
+          $questionid =$questionarray[$idx]['Question_id'];
 
 
-	        $reponseid[] = $results[0]; 
-	        ?>
+          $reponseid[] = $results[0]; 
+          ?>
 
-	        <div class="bk<?php echo $quizzid ?>noir">
-	          <h3  ><br><br> Question Numéro <?php echo $questionid; ?> !<br><br>  </h3>
-	          <label ><?php echo $question; ?> <br><br></label>
-	          <?php
+          <div class="bk<?php echo $quizzid ?>noir">
+            <h3  ><br><br> Question Numéro <?php echo $questionid; ?> !<br><br>  </h3>
+            <label ><?php echo $question; ?> <br><br></label>
+            <?php
 
 
-	          $request2 = $bdd->prepare("SELECT answer_text FROM answer WHERE answer_question_id = ? AND is_valid_answer=1");
-	          $request2 ->execute([$idx]);
-	          $results=$request2->fetch();
+            $request2 = $bdd->prepare("SELECT answer_text FROM answer WHERE answer_question_id = ? AND is_valid_answer=1");
+            $request2 ->execute([$idx]);
+            $results=$request2->fetch();
 
-	          
-	          if ( $listereponses[$idx] == 1) {
-	            {?> <p id="qtrue" > <br> [VRAI] <?php echo $results[0]; ?> </p> <?php } 
-	          }
-	          else{
-	           ?> <p id="qfalse" > <br> [FAUX] <?php echo $results[0]; ?> </p> 
-	       
-	            <?php
-	          }
+            
+            if ( $listereponses[$idx] == 1) {
+              {?> <p id="qtrue" > <br> [VRAI] <?php echo $results[0]; ?> </p> <?php } 
+            }
+            else{
+             ?> <p id="qfalse" > <br> [FAUX] <?php echo $results[0]; ?> </p> 
+         
+              <?php
+            }
 
-	    }
+      }
       else {
 
             $question = $questionarray[$idx]['Question'];
