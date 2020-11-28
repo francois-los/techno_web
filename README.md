@@ -14,6 +14,8 @@ password : Password1
 
 Ou alors vous pouvez créer votre compte :)
 
+Attention ! Nous avons fait les bonus 1 à 4 mais pas le 5 !
+
 Lien du word du rapport : 
 
 https://yncrea-my.sharepoint.com/:w:/g/personal/francois_losfeld_isen_yncrea_fr/EZ2gojEcccBBtGMxn08AzmIBbKRvYZes0ofabuYgprhAUw?e=SGZ7CA
