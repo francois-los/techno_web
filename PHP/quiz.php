@@ -6,10 +6,11 @@ if (isset($_GET['id'])){
     die;
 }
 $_SESSION['quizzid'] = $quizzid;
+$_SESSION['debutQuizz'] = time();
 ?>
 
 
-<?php include('data.php'); ?>
+<?php include('data.php');?>
 
 
 <body class="bkq1">
@@ -21,12 +22,12 @@ $_SESSION['quizzid'] = $quizzid;
     <div class="background-img">
       <div class="box">
         <div class="content">
-          <h2> Quizz numéro <?php echo $quizzid ?> </h2>
+          <h2> Quizz numéro <?php echo $quizzid; ?> </h2>
         </div>    
       </div>
     </div>
   </div>
-</section>
+</section> 
 
 
 <form action ="index.php?direction=reponsequizz&id=<?php echo $quizzid ?>" method="post">
@@ -77,7 +78,14 @@ $_SESSION['quizzid'] = $quizzid;
   </div> 
 
     <?php } ?>
-  <br /><button type="submit" name="validerQuizz"> Valider vos réponses !</button><br /><br /><br /><br /><br /><br />
+
+    <?php
+    if ($quizzid > 2){ ?>
+      <br /><br />
+      <h3>Aucune question dans ce quizz.</h3>
+    <?php } else { ?>
+    <br /><button type="submit" name="validerQuizz"> Valider vos réponses !</button><br /><br /><br /><br /><br /><br />
+    <?php } ?>
 
  
 </form>
