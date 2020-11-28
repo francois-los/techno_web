@@ -36,5 +36,44 @@
     	</li>
     </ul>
    </nav>
+
+
+
+    <?php
+      if (!empty($_SESSION['username'])) { 
+        if ($_SESSION['username']=="CompteTest"){
+            ?>
+        
+           <nav class="quizzresume">
+              <ul class="navigationListe">
+                  <li><a href="index.php?direction=admin1" title="Go to home">[ADMIN] Quizz List</a></li>
+              </ul>
+          </nav>
+ 
+          <nav class="quizzresume">
+            <ul class="navigationListe">
+              <li class="deroulant"><a href="">[ADMIN] Change Quizz</a>
+                <ul class="sous">
+                  <?php foreach ($quizzidarray as $quizzKey => $quizzValue) {?>
+                         <li><a href="index.php?direction=admin2&id=<?php echo $quizzValue ?>" title="Go to home">Quizz <?php echo $quizzValue ?></a></li>
+                        <?php }?>
+                </ul>
+              </li>
+            </ul>
+           </nav>
+
+
+            <?php }
+       
+
+       
+      }
+
+   ?>
+     
+   
+
+
+
 </section>
 </body>
